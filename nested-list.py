@@ -69,7 +69,7 @@ for password in passwords:
 else:
     print("INVALID PASSWORD")'''
 
-passwords = input("Enter the passwords you would like to have: ").split(",")
+'''passwords = input("Enter the passwords you would like to have: ").split(",")
 validPasswordFound = False
 
 for password in passwords:
@@ -84,6 +84,27 @@ for password in passwords:
             continue
         print(password)
         validPasswordFound = True
+
+if(not validPasswordFound):
+    print("INVALID PASSWORD")'''
+
+
+# Python3 code to demonstrate working of
+# Test if String contains any Uppercase character
+# Using re()
+
+# initializing string
+import re
+passwords = input("Enter the passwords you would like to have: ").split(",")
+validPasswordFound = False
+for password in passwords:
+    if(len(password) >= 6 and len(password) <= 12):
+        if re.match(r'.*[A-Z].*', password):
+            if re.match(r'.*[a-z].*', password):
+                if re.match(r'.*[0-9].*', password):
+                    if re.match(r'.*[#$@*\/].*', password):
+                        print(password)
+                        validPasswordFound = True
 
 if(not validPasswordFound):
     print("INVALID PASSWORD")
