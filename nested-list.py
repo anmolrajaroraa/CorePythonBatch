@@ -94,7 +94,7 @@ if(not validPasswordFound):
 # Using re()
 
 # initializing string
-import re
+'''import re
 passwords = input("Enter the passwords you would like to have: ").split(",")
 validPasswordFound = False
 for password in passwords:
@@ -106,5 +106,16 @@ for password in passwords:
                         print(password)
                         validPasswordFound = True
 
+if(not validPasswordFound):
+    print("INVALID PASSWORD")'''
+
+import re
+passwords = input("Enter the passwords you would like to have: ").split(",")
+validPasswordFound = False
+for password in passwords:
+    # if(len(password) >= 6 and len(password) <= 12) and re.match(r'.*[A-Z].*' and r'.*[a-z].*' and r'.*[0-9].*' and r'.*[#$@\/].*', password):
+    if re.match(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,12}$", password):
+        print(password)
+        validPasswordFound = True
 if(not validPasswordFound):
     print("INVALID PASSWORD")
