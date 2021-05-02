@@ -149,4 +149,181 @@ dict_items([('English', 99), ('Physics', 98), ('Chemistry', 97),
 >> > student
 {'name': 'Shyam', 'id': 105, 'percentage': 99.9}
 >> >
+>>> student = {}
+>>> student
+{}
+>>> student['id'] = 102
+>>> student['name'] = "Shyam"
+>>> student['marks'] = {}
+>>> studnet['marks']['English'] = 99
+Traceback (most recent call last):
+  File "<pyshell#6>", line 1, in <module>
+    studnet['marks']['English'] = 99
+NameError: name 'studnet' is not defined
+>>> student['marks']['English'] = 99
+>>> student
+{'id': 102, 'name': 'Shyam', 'marks': {'English': 99}}
+>>> student = {
+    "id": 101,
+    "name": "Ram",
+    "marks": {
+            "English": 99,
+            "Physics": 98,
+	"Chemistry": 97,
+	"Geography": 96,
+	"Sanskrit": 95
+    }
+}
+>>> student
+{'id': 101, 'name': 'Ram', 'marks': {'English': 99, 'Physics': 98, 'Chemistry': 97, 'Geography': 96, 'Sanskrit': 95}}
+>>> student.keys()
+dict_keys(['id', 'name', 'marks'])
+>>> student_keys = student.keys()
+>>> student_keys
+dict_keys(['id', 'name', 'marks'])
+>>> dict.fromkeys(student_keys)
+{'id': None, 'name': None, 'marks': None}
+>>> student2 = dict.fromkeys(student_keys)
+>>> student2
+{'id': None, 'name': None, 'marks': None}
+>>> student2['marks'] = dict.fromkeys(["English","Physics","Chemistry","Geography","Sanskrit"])
+>>> student2
+{'id': None, 'name': None, 'marks': {'English': None, 'Physics': None, 'Chemistry': None, 'Geography': None, 'Sanskrit': None}}
+>>> student2['marks']['English']
+>>> student['marks']['Computer Science']
+Traceback (most recent call last):
+  File "<pyshell#20>", line 1, in <module>
+    student['marks']['Computer Science']
+KeyError: 'Computer Science'
+>>> student2['marks'] = dict.fromkeys(["English","Physics","Chemistry","Geography","Sanskrit","Computer Science"])
+>>> student['marks']['Computer Science']
+Traceback (most recent call last):
+  File "<pyshell#22>", line 1, in <module>
+    student['marks']['Computer Science']
+KeyError: 'Computer Science'
+>>> student2['marks']['Computer Science']
+>>> def add():
+    print(x + y)
+
+    
+>>> def sub():
+    print(x - y)
+
+    
+>>> def mul():
+    print(x * y)
+
+    
+>>> def div():
+    print(x / y)
+
+    
+>>> choices = {
+    1: add(),
+    2: sub(),
+    3: mul(),
+    4: div()
+}
+Traceback (most recent call last):
+  File "<pyshell#32>", line 2, in <module>
+    1: add(),
+  File "<pyshell#25>", line 2, in add
+    print(x + y)
+NameError: name 'x' is not defined
+>>> x = 10
+>>> y = 20
+>>> choices = {
+    1: add(),
+    2: sub(),
+    3: mul(),
+    4: div()
+}
+30
+-10
+200
+0.5
+>>> choices
+{1: None, 2: None, 3: None, 4: None}
+>>> choices = {
+    1: add,
+    2: sub,
+    3: mul,
+    4: div
+}
+>>> choices
+{1: <function add at 0x7ff8ea7c22f0>, 2: <function sub at 0x7ff8ea7c2378>, 3: <function mul at 0x7ff8ea7c2400>, 4: <function div at 0x7ff8ea7c2488>}
+>>> choices[1]
+<function add at 0x7ff8ea7c22f0>
+>>> choices[2]
+<function sub at 0x7ff8ea7c2378>
+>>> choices[2]()
+-10
+>>> student = {
+    "id": 101,
+    "name": "Ram",
+    "marks": {
+            "English": 99,
+            "Physics": 98,
+	"Chemistry": 97,
+	"Geography": 96,
+	"Sanskrit": 95
+    },
+    "default": "Key not found"
+}
+>>> student.get("xyz", "default")
+'default'
+>>> student.get("xyz", "key not found")
+'key not found'
+>>> student.get("name", "key not found")
+'Ram'
 '''
+
+x = 10
+y = 20
+
+
+def add():
+    print(x + y)
+
+
+def sub():
+    print(x - y)
+
+
+def mul():
+    print(x * y)
+
+
+def div():
+    print(x / y)
+
+
+def errorHandler():
+    print("Invalid operation")
+
+
+print('''
+1. Add
+2. Sub
+3. Mul
+4. Div
+''')
+choices = {
+    1: add,
+    2: sub,
+    3: mul,
+    4: div
+}
+user_choice = int(input("Your choice: "))
+# choices[user_choice]()
+choices.get(user_choice, errorHandler)()
+# if choice == 1:
+#     add()
+# elif choice == 2:
+#     sub()
+# elif choice == 3:
+#     mul()
+# elif choice == 4:
+#     div()
+# else:
+#     print("Invalid choice")
