@@ -1,4 +1,4 @@
-num = 0
+num = 10
 factorial = 1
 
 if num < 0:

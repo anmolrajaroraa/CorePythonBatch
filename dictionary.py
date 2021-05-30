@@ -307,6 +307,7 @@ print('''
 2. Sub
 3. Mul
 4. Div
+5. Mod
 ''')
 choices = {
     1: add,

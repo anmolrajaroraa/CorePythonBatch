@@ -1,5 +1,5 @@
 digitCount = len((num:= input("Enter a number to check: ")))
-temp = (num:= int(num))
+temp = (num: = int(num))
 sum = 0
 
 while temp > 0:

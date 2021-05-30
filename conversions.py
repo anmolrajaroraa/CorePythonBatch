@@ -1,3 +1,10 @@
+# from dictionary import add
+# import factorial
+# print(factorial.factorial)
+# from factorial import factorial
+# print(factorial)
+import "./factorial/factorial.py"
+
 '''Python 3.7.3 (v3.7.3:ef4ec6ed12, Mar 25 2019, 16:52:21) 
 [Clang 6.0 (clang-600.0.57)] on darwin
 Type "help", "copyright", "credits" or "license()" for more information.
@@ -177,3 +184,212 @@ FileNotFoundError: [Errno 2] No such file or directory: '/Users/anmolrajarora/go
 >>> # 4. import pandas as pd
 >>> # 5. from os import *
 >>> '''
+'''
+Python 3.7.3 (v3.7.3:ef4ec6ed12, Mar 25 2019, 16:52:21) 
+[Clang 6.0 (clang-600.0.57)] on darwin
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> bytes([72,9,64])
+b'H\t@'
+>>> bytes(72)
+b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+>>> bytes.fromhex('A890DE')
+b'\xa8\x90\xde'
+>>> list("abc")
+['a', 'b', 'c']
+>>> list((10,20,30))
+[10, 20, 30]
+>>> list(10,20,30)
+Traceback (most recent call last):
+  File "<pyshell#7>", line 1, in <module>
+    list(10,20,30)
+TypeError: list expected at most 1 arguments, got 3
+>>> student = {
+	name : "Ram",
+	marks : 96
+	}
+Traceback (most recent call last):
+  File "<pyshell#11>", line 2, in <module>
+    name : "Ram",
+NameError: name 'name' is not defined
+>>> student = {
+	"name" : "Ram",
+	"marks" : 96
+}
+>>> list(student)
+['name', 'marks']
+>>> student.items()
+dict_items([('name', 'Ram'), ('marks', 96)])
+>>> list(student.items())
+[('name', 'Ram'), ('marks', 96)]
+>>> dict( (1:"one"), (2:"two"), (3:"three") )
+SyntaxError: invalid syntax
+>>> dict( (1,"one"), (2,"two"), (3,"three") )
+Traceback (most recent call last):
+  File "<pyshell#17>", line 1, in <module>
+    dict( (1,"one"), (2,"two"), (3,"three") )
+TypeError: dict expected at most 1 arguments, got 3
+>>> dict( ( (1,"one"), (2,"two"), (3,"three") ) )
+{1: 'one', 2: 'two', 3: 'three'}
+>>> list1 = ["one","two","three","four"]
+>>> dict(list1)
+Traceback (most recent call last):
+  File "<pyshell#20>", line 1, in <module>
+    dict(list1)
+ValueError: dictionary update sequence element #0 has length 3; 2 is required
+>>> list1 = [("one","two"),("three","four")]
+>>> dict(list1)
+{'one': 'two', 'three': 'four'}
+>>> 
+>>> 
+>>> 
+>>> list1 = ["one","two","three","four"]
+>>> set(list1)
+{'one', 'four', 'two', 'three'}
+>>> set(student)
+{'marks', 'name'}
+>>> 
+>>> 
+>>> str1 = "dictionary update sequence element #0 has length 3; 2 is required"
+>>> str1.split()
+['dictionary', 'update', 'sequence', 'element', '#0', 'has', 'length', '3;', '2', 'is', 'required']
+>>> str1.split('e')
+['dictionary updat', ' s', 'qu', 'nc', ' ', 'l', 'm', 'nt #0 has l', 'ngth 3; 2 is r', 'quir', 'd']
+>>> words = str1.split()
+>>> words
+['dictionary', 'update', 'sequence', 'element', '#0', 'has', 'length', '3;', '2', 'is', 'required']
+>>> " ".join(words)
+'dictionary update sequence element #0 has length 3; 2 is required'
+>>> "$".join(words)
+'dictionary$update$sequence$element$#0$has$length$3;$2$is$required'
+>>> input("Enter numbers separated by spaces: ")
+Enter numbers separated by spaces: 1 2 3 4 5 6 7 8 9 10
+'1 2 3 4 5 6 7 8 9 10'
+>>> for char in '1 2 3 4 5 6 7 8 9 10':
+	print(char)
+
+	
+1
+ 
+2
+ 
+3
+ 
+4
+ 
+5
+ 
+6
+ 
+7
+ 
+8
+ 
+9
+ 
+1
+0
+>>> '1 2 3 4 5 6 7 8 9 10'.split()
+['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+>>> for element in ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']:
+	print(int(x))
+
+	
+Traceback (most recent call last):
+  File "<pyshell#45>", line 2, in <module>
+    print(int(x))
+NameError: name 'x' is not defined
+>>> for element in ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']:
+	print(int(element))
+
+	
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+>>> [int(element) for element in '1 2 3 4 5 6 7 8 9 10'.split()]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+>>> list1 = [10,20,30,40,50]
+>>> len(list1)
+5
+>>> list1[0]
+10
+>>> list1[-1]
+50
+>>> list1[1]
+20
+>>> list1[-2]
+40
+>>> del list1[3]
+>>> list1
+[10, 20, 30, 50]
+>>> list1[2] = 90
+>>> list1
+[10, 20, 90, 50]
+>>> #[start:stop:step]
+>>> list1[:-1]
+[10, 20, 90]
+>>> list1[1:-1]
+[20, 90]
+>>> list1[::2]
+[10, 90]
+>>> list1[::-1]
+[50, 90, 20, 10]
+>>> list1[::-2]
+[50, 20]
+>>> list1[:]
+[10, 20, 90, 50]
+>>> list1
+[10, 20, 90, 50]
+>>> list1[1:3]
+[20, 90]
+>>> list1[3:]
+[50]
+>>> # creating a sub-sequence thorugh slicing gives you back a shallow copy of original list
+>>> list1 = [1,2,3,4,5,6,7,8,9]
+>>> del list1[3:5]
+>>> list1
+[1, 2, 3, 6, 7, 8, 9]
+>>> list1[1:4] = 45
+Traceback (most recent call last):
+  File "<pyshell#73>", line 1, in <module>
+    list1[1:4] = 45
+TypeError: can only assign an iterable
+>>> list1[1:4] = [12,23]
+>>> list1
+[1, 12, 23, 7, 8, 9]
+>>> 10 < 20 and 20 < 30
+True
+>>> 10 < 2 and 20 < 30
+False
+>>> 10 < 20 and 20 < 3
+False
+>>> 10 < 2 and 20 < 3
+False
+>>> 10 < 20 or 20 < 30
+True
+>>> 10 < 2 or 20 < 30
+True
+>>> 10 < 20 or 20 < 3
+True
+>>> 10 < 2 or 20 < 3
+False
+>>> 10 < 2 | 20 < 3
+False
+>>> 10 or 20
+10
+>>> 10 and 20
+20
+>>> 10 and -1
+-1
+>>> 0 and -1
+0
+>>> 0 or -1
+-1
+>>> 
+'''
