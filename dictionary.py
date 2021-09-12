@@ -175,7 +175,8 @@ NameError: name 'studnet' is not defined
     }
 }
 >>> student
-{'id': 101, 'name': 'Ram', 'marks': {'English': 99, 'Physics': 98, 'Chemistry': 97, 'Geography': 96, 'Sanskrit': 95}}
+{'id': 101, 'name': 'Ram', 'marks': {'English': 99, 'Physics': 98,
+    'Chemistry': 97, 'Geography': 96, 'Sanskrit': 95}}
 >>> student.keys()
 dict_keys(['id', 'name', 'marks'])
 >>> student_keys = student.keys()
@@ -188,7 +189,8 @@ dict_keys(['id', 'name', 'marks'])
 {'id': None, 'name': None, 'marks': None}
 >>> student2['marks'] = dict.fromkeys(["English","Physics","Chemistry","Geography","Sanskrit"])
 >>> student2
-{'id': None, 'name': None, 'marks': {'English': None, 'Physics': None, 'Chemistry': None, 'Geography': None, 'Sanskrit': None}}
+{'id': None, 'name': None, 'marks': {'English': None, 'Physics': None,
+    'Chemistry': None, 'Geography': None, 'Sanskrit': None}}
 >>> student2['marks']['English']
 >>> student['marks']['Computer Science']
 Traceback (most recent call last):
@@ -205,19 +207,19 @@ KeyError: 'Computer Science'
 >>> def add():
     print(x + y)
 
-    
+
 >>> def sub():
     print(x - y)
 
-    
+
 >>> def mul():
     print(x * y)
 
-    
+
 >>> def div():
     print(x / y)
 
-    
+
 >>> choices = {
     1: add(),
     2: sub(),
@@ -328,3 +330,367 @@ choices.get(user_choice, errorHandler)()
 #     div()
 # else:
 #     print("Invalid choice")
+
+'''
+Python 3.7.3 (v3.7.3:ef4ec6ed12, Mar 25 2019, 16:52:21) 
+[Clang 6.0 (clang-600.0.57)] on darwin
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> d = {
+	a = 1
+	
+SyntaxError: invalid syntax
+>>> d = {
+	'a' = 1
+	
+SyntaxError: invalid syntax
+>>> d = {
+	'a' : 1,
+	'b' : 2
+}
+>>> d['a']
+1
+>>> id(d['a'])
+4437806256
+>>> #d[key] -> object = value
+>>> d
+{'a': 1, 'b': 2}
+>>> d.clear()
+>>> d
+{}
+>>> del d
+>>> d
+Traceback (most recent call last):
+  File "<pyshell#13>", line 1, in <module>
+    d
+NameError: name 'd' is not defined
+>>> d = {
+	'a' : 1,
+	'b' : 2
+}
+>>> del d
+>>> d
+Traceback (most recent call last):
+  File "<pyshell#16>", line 1, in <module>
+    d
+NameError: name 'd' is not defined
+>>> x = 10
+>>> d = {
+	'a' : 1,
+	'b' : x
+}
+>>> del d
+>>> d
+Traceback (most recent call last):
+  File "<pyshell#21>", line 1, in <module>
+    d
+NameError: name 'd' is not defined
+>>> x
+10
+>>> d = {
+	'a' : 1,
+	'b' : x
+}
+>>> d['a']
+1
+>>> d['b']
+10
+>>> del d['a']
+>>> d
+{'b': 10}
+>>> del d['b']
+>>> d
+{}
+>>> x
+10
+>>> d.update('a':1)
+SyntaxError: invalid syntax
+>>> student = {
+	'enrl_no' : 101,
+	'name' : 'Ram Kumar'
+	}
+>>> updated_student = {
+	'enrl_no' : 101,
+	'name' : 'Ram Kumar Sharma'
+	}
+>>> student['name'] = 'RKS'
+>>> student
+{'enrl_no': 101, 'name': 'RKS'}
+>>> student = {
+	'enrl_no' : 101,
+	'name' : 'Ram Kumar',
+	'address' : 'ABC Town'
+	}
+>>> updated_student = {
+	'enrl_no' : 101,
+	'name' : 'Ram Kumar Sharma',
+	'address' : 'XYZ City',
+	'course' : 'Medical'
+	}
+>>> student.update(updated_student)
+>>> student = {
+	'enrl_no' : 101,
+	'name' : 'Ram Kumar Sharma',
+	'address' : 'XYZ City',
+	'course' : 'Medical'
+	}
+>>> 
+>>> 
+>>> student = {
+	'enrl_no' : 101,
+	'name' : 'Ram Kumar',
+	'address' : 'ABC Town'
+	}
+>>> updated_student = {
+	'name' : 'Ram Kumar Sharma',
+	'address' : 'XYZ City',
+	'course' : 'Medical'
+	}
+>>> student.update(updated_student)
+>>> student
+{'enrl_no': 101, 'name': 'Ram Kumar Sharma', 'address': 'XYZ City', 'course': 'Medical'}
+>>> student.keys()
+dict_keys(['enrl_no', 'name', 'address', 'course'])
+>>> student.values()
+dict_values([101, 'Ram Kumar Sharma', 'XYZ City', 'Medical'])
+>>> student.items()
+dict_items([('enrl_no', 101), ('name', 'Ram Kumar Sharma'), ('address', 'XYZ City'), ('course', 'Medical')])
+>>> student.pop()
+Traceback (most recent call last):
+  File "<pyshell#54>", line 1, in <module>
+    student.pop()
+TypeError: pop expected at least 1 arguments, got 0
+>>> 
+>>> list1 = [1,2,3]
+>>> student.pop('course')
+'Medical'
+>>> student.popitem()
+('address', 'XYZ City')
+>>> student.setdefault(course)
+Traceback (most recent call last):
+  File "<pyshell#59>", line 1, in <module>
+    student.setdefault(course)
+NameError: name 'course' is not defined
+>>> student.setdefault('course')
+>>> student
+{'enrl_no': 101, 'name': 'Ram Kumar Sharma', 'course': None}
+>>> student.setdefault('course', 'N/A')
+>>> student
+{'enrl_no': 101, 'name': 'Ram Kumar Sharma', 'course': None}
+>>> student.pop('course')
+>>> student.setdefault('course', 'N/A')
+'N/A'
+>>> student
+{'enrl_no': 101, 'name': 'Ram Kumar Sharma', 'course': 'N/A'}
+>>> help(set)
+Help on class set in module builtins:
+
+class set(object)
+ |  set() -> new empty set object
+ |  set(iterable) -> new set object
+ |  
+ |  Build an unordered collection of unique elements.
+ |  
+ |  Methods defined here:
+ |  
+ |  __and__(self, value, /)
+ |      Return self&value.
+ |  
+ |  __contains__(...)
+ |      x.__contains__(y) <==> y in x.
+ |  
+ |  __eq__(self, value, /)
+ |      Return self==value.
+ |  
+ |  __ge__(self, value, /)
+ |      Return self>=value.
+ |  
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |  
+ |  __gt__(self, value, /)
+ |      Return self>value.
+ |  
+ |  __iand__(self, value, /)
+ |      Return self&=value.
+ |  
+ |  __init__(self, /, *args, **kwargs)
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |  
+ |  __ior__(self, value, /)
+ |      Return self|=value.
+ |  
+ |  __isub__(self, value, /)
+ |      Return self-=value.
+ |  
+ |  __iter__(self, /)
+ |      Implement iter(self).
+ |  
+ |  __ixor__(self, value, /)
+ |      Return self^=value.
+ |  
+ |  __le__(self, value, /)
+ |      Return self<=value.
+ |  
+ |  __len__(self, /)
+ |      Return len(self).
+ |  
+ |  __lt__(self, value, /)
+ |      Return self<value.
+ |  
+ |  __ne__(self, value, /)
+ |      Return self!=value.
+ |  
+ |  __or__(self, value, /)
+ |      Return self|value.
+ |  
+ |  __rand__(self, value, /)
+ |      Return value&self.
+ |  
+ |  __reduce__(...)
+ |      Return state information for pickling.
+ |  
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |  
+ |  __ror__(self, value, /)
+ |      Return value|self.
+ |  
+ |  __rsub__(self, value, /)
+ |      Return value-self.
+ |  
+ |  __rxor__(self, value, /)
+ |      Return value^self.
+ |  
+ |  __sizeof__(...)
+ |      S.__sizeof__() -> size of S in memory, in bytes
+ |  
+ |  __sub__(self, value, /)
+ |      Return self-value.
+ |  
+ |  __xor__(self, value, /)
+ |      Return self^value.
+ |  
+ |  add(...)
+ |      Add an element to a set.
+ |      
+ |      This has no effect if the element is already present.
+ |  
+ |  clear(...)
+ |      Remove all elements from this set.
+ |  
+ |  copy(...)
+ |      Return a shallow copy of a set.
+ |  
+ |  difference(...)
+ |      Return the difference of two or more sets as a new set.
+ |      
+ |      (i.e. all elements that are in this set but not the others.)
+ |  
+ |  difference_update(...)
+ |      Remove all elements of another set from this set.
+ |  
+ |  discard(...)
+ |      Remove an element from a set if it is a member.
+ |      
+ |      If the element is not a member, do nothing.
+ |  
+ |  intersection(...)
+ |      Return the intersection of two sets as a new set.
+ |      
+ |      (i.e. all elements that are in both sets.)
+ |  
+ |  intersection_update(...)
+ |      Update a set with the intersection of itself and another.
+ |  
+ |  isdisjoint(...)
+ |      Return True if two sets have a null intersection.
+ |  
+ |  issubset(...)
+ |      Report whether another set contains this set.
+ |  
+ |  issuperset(...)
+ |      Report whether this set contains another set.
+ |  
+ |  pop(...)
+ |      Remove and return an arbitrary set element.
+ |      Raises KeyError if the set is empty.
+ |  
+ |  remove(...)
+ |      Remove an element from a set; it must be a member.
+ |      
+ |      If the element is not a member, raise a KeyError.
+ |  
+ |  symmetric_difference(...)
+ |      Return the symmetric difference of two sets as a new set.
+ |      
+ |      (i.e. all elements that are in exactly one of the sets.)
+ |  
+ |  symmetric_difference_update(...)
+ |      Update a set with the symmetric difference of itself and another.
+ |  
+ |  union(...)
+ |      Return the union of sets as a new set.
+ |      
+ |      (i.e. all elements that are in either set.)
+ |  
+ |  update(...)
+ |      Update a set with the union of itself and others.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |  
+ |  __hash__ = None
+
+>>> setA = {1,2,3,4,5}
+>>> setB = {5,6,7,8,9}
+>>> setA | setB
+{1, 2, 3, 4, 5, 6, 7, 8, 9}
+>>> setA || setB
+SyntaxError: invalid syntax
+>>> setA & setB
+{5}
+>>> setA - setB
+{1, 2, 3, 4}
+>>> (setA - setB) | (setB - setA)
+{1, 2, 3, 4, 6, 7, 8, 9}
+>>> setA ^ setB
+{1, 2, 3, 4, 6, 7, 8, 9}
+>>> setA < setB
+False
+>>> setB = {2,4}
+>>> setA < setB
+False
+>>> setA > setB
+True
+>>> setA.issuperset(setB)
+True
+>>> setA < setB
+False
+>>> setB < setA
+True
+>>> setB.issubset(setA)
+True
+>>> setB = {1,2,3,4,5}
+>>> setB < setA
+False
+>>> setA < setB
+False
+>>> setA <= setB
+True
+>>> setA >= setB
+True
+>>> setA
+{1, 2, 3, 4, 5}
+>>> setB = {5,6,7,8,9}
+>>> setA.update(setB)
+>>> setA
+{1, 2, 3, 4, 5, 6, 7, 8, 9}
+>>> setA.pop()
+1
+>>> '''
